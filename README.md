@@ -31,8 +31,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, 
-|user_id|indteger|null: false, 
+|group_id|integer|null: false, foreign_key: true|
+|user_id|indteger|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
