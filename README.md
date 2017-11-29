@@ -5,11 +5,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false, 
+|name|text|null: false|
 |email|text|null: false, 
 |password|text|null: false, 
 
-###Association
+### Association
 - has_many :messages
 - has_many :groups, through: :group_users
 - has_many :group_users
@@ -27,7 +27,7 @@
 |user_id|integer|null: false, 
 |group_id|integer|null: false, 
 
-###Association
+### Association
 - belongs_to :user
 - belings_to :group
 
@@ -39,7 +39,7 @@
 |group_id|integer|null: false, 
 |user_id|indteger|null: false, 
 
-###Association
+### Association
 - belongs_to :group
 - belongs_to :user
 
@@ -50,7 +50,7 @@
 |------|----|-------|
 |group_name|text|null: false, 
 
-###Associaton
+### Associaton
 - has_many :messages
 - has_many :users, through: :group_users
 - has_many :group_users
