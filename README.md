@@ -5,9 +5,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|stiring|null: false, unique: true|
-|password|text|null: false|
 
 ### Association
 - has_many :messages
