@@ -5,6 +5,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|user|string|index: true|
+
 
 ### Association
 - has_many :messages
