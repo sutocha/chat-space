@@ -43,7 +43,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false, 
+|group_name|string|null: false|
 
 ### Associaton
 - has_many :messages
