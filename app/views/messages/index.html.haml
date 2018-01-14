@@ -32,8 +32,12 @@
         .message__comment メッセージの内容
     .bottom-main-content
       .form
-        %input.form__message{type: 'textarea',placeholder: 'type a message'}
-        %input.form__submit{type: 'button', value: 'Send'}
+        %input.form__message{type: 'textarea', placeholder: 'type a message'}
+          .form__mask
+            %label.form__mask__image{for: 'message_image'}
+              %i.fa.fa-picture-o.icon
+              %input#message_image.hidden{name: 'message_image', type: 'file'}
+      %input.form__submit{type: 'button', value: 'Send'}
 
   .clear
 
