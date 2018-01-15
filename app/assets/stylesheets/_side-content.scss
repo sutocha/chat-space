@@ -1,0 +1,51 @@
+
+.side-content{
+  width: 300px;
+  height: 700px;
+  color: #FFFFFF;
+  background: #2f3e51;
+  float: left;
+}
+.top-side-content{
+  height: 100px;
+  width: 260px;
+  padding: 0 20px;
+  background: #253141;
+}
+.user{
+  padding: 40px 0 0;
+  &__name{
+    text: 16px;
+    color: #FFFFFF;
+    float: left;
+  }
+}
+
+.fa-cog{
+    float: right;
+    color: white;
+    }
+.fa-pencil-square-o{
+    float: right;
+    color: white;
+}
+
+
+
+.middle-side-content{
+height: calc(700px - 100px);
+width: 300px;
+background: #2f3e51;
+}
+.group{
+  padding: 20px 20px 40px;
+  &__name{
+    font-size: 15px;
+    color: #FFFFFF;
+    padding: 0 0 5px;
+  }
+  &__info{
+    font-size: 11px;
+    color: #FFFFFF;
+  }
+}

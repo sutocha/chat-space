@@ -1,0 +1,43 @@
+%header チャットグループが作成されました。
+.content-wrapper
+  .side-content
+    .top-side-content
+      .user
+        .user__name ユーザーネーム
+        = link_to  do
+          %i.fa.fa-cog{"aria-hidden" => "true"}
+        = link_to  do
+          %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+          .clear
+
+    .middle-side-content
+      .group
+        .group__name group1
+        .group__info no messages
+
+
+  .main-content
+    .top-main-content
+      .current-group
+        .current-group__name sampleグループ
+        .current-group__members メンバー：
+      %input.edit-button{type: 'button', value: 'Edit'}
+
+    .center-main-content
+      .message
+        .message__top
+          .message__user メッセージしたユーザーの表示
+          .message__date メッセージの日付
+          .clear
+        .message__comment メッセージの内容
+    .bottom-main-content
+      .form
+        %input.form__message{type: 'textarea', placeholder: 'type a message'}
+          .form__mask
+            %label.form__mask__image{for: 'message_image'}
+              %i.fa.fa-picture-o.icon
+              %input#message_image.hidden{name: 'message_image', type: 'file'}
+      %input.form__submit{type: 'button', value: 'Send'}
+
+  .clear
+
