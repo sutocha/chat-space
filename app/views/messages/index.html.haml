@@ -24,12 +24,14 @@
       %input.edit-button{type: 'button', value: 'Edit'}
 
     .center-main-content
-      .message
-        .message__top
-          .message__user メッセージしたユーザーの表示
-          .message__date メッセージの日付
-          .clear
-        .message__comment メッセージの内容
+      .messages
+        = render @messages
+      / .message
+      /   .message__top
+      /     .message__user メッセージしたユーザーの表示
+      /     .message__date メッセージの日付
+      /     .clear
+      /   .message__comment メッセージの内容
     .bottom-main-content
       .form
       = form_for [@group, @message] do |f|
