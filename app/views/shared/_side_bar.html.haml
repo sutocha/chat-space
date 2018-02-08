@@ -3,9 +3,11 @@
   .top-side-content
     .user
       .use__name  #{current_user.name}
-      = link_to  new_group_path do
-        %i.fa.fa-cog{"aria-hidden" => "true"}
+
       = link_to  do
+        %i.fa.fa-cog{"aria-hidden" => "true"}
+      = link_to  new_group_path do
+
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
         .clear
   .middle-side-content
@@ -15,4 +17,4 @@
           .group__name
             = group.name
           .group__info
-            メッセージはまだありません。
+            = group.show_last_message

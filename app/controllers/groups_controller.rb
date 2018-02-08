@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:edit, :update]
 
   def index
   end
@@ -14,7 +13,9 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
+
       flash.now[:alert] = 'グループの作成に失敗しました。'
+
       render :new
     end
   end
@@ -30,7 +31,10 @@ class GroupsController < ApplicationController
 
   private
   def group_params
+
+
     params.require(:group).permit(:name, user_ids: [])
+
   end
 
   def set_group
