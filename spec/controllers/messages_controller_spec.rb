@@ -23,6 +23,13 @@ describe MessageController do
     end
 
     describe '#not log in' do
+      before do
+        get :index, params: { group_id: group.id }
+      end
+
+      it 'redirects to new_user_session_path' do
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
   end
 end
