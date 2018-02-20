@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe MessageController do
+describe MessagesController do
   describe '#index'do
 
     describe '#log in' do
