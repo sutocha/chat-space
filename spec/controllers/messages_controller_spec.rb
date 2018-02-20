@@ -45,9 +45,9 @@ describe MessagesController do
         login user
       end
       context 'can save' do
-        test { post :create, params: params }
+        subject { post :create, params: params }
         it 'count up message' do
-          expet{ test }.to change(Message, :count).by(1)
+          expect{ subject }.to change(Message, :count).by(1)
         end
         it 'redirects to group_messages_path' do
           subject
@@ -57,10 +57,10 @@ describe MessagesController do
       context 'cant save' do
         let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, content: nil, image: nil) } }
 
-        test { post :create, params: invalid_params }
+        subject { post :create, params: invalid_params }
 
         it 'does not count up' do
-          expect{ test }.not_to change(Message, :count)
+          expect{ subject }.not_to change(Message, :count)
         end
         it 'renders index' do
           expect(response).to render_template :index
