@@ -6,7 +6,7 @@ describe MessagesController do
 
   describe '#index'do
 
-    describe '#log in' do
+    context '#log in' do
       before do
         login user
         get :index, params: { group_id: group.id }
@@ -25,7 +25,7 @@ describe MessagesController do
       end
     end
 
-    describe '#not log in' do
+    context '#not log in' do
       before do
         get :index, params: { group_id: group.id }
       end
