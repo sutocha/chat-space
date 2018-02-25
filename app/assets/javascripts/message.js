@@ -32,6 +32,8 @@ $(function(){
     .done(function(data){
       var insertHTML = buildHTML(data);
       $('messages').append(insertHTML);
+      $form[0].reset();
+      $messages.animate({scrollTop: $messages[0].scrollHeight}, 2000);
     })
   })
 })
