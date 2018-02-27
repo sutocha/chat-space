@@ -4,15 +4,14 @@ $(function(){
                 <div class="message">
                   <div class="message__top">
                     <div class="message__user">
-                      message.user.name
+                      ${message.user_name}
                     </div>
                     <div class="message__date">
-                      message.created_at
+                      ${message.created_at}
                     </div>
                   </div>
                   <div class="message__comment">
-                    <p>@message.content</p>
-                    <p> <img src="message.image.url" class="lower-message__image" > </p>
+                    ${message.content}
                   </div>
                 </div>`
     return html;
