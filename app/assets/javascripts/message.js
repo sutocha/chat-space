@@ -9,9 +9,10 @@ $(function(){
                     <div class="message__date">
                       ${message.created_at}
                     </div>
-                  </div>
-                  <div class="message__comment">
-                    ${message.content}
+                    <div class="clear"></div>
+                    <div class="message__comment">
+                      ${message.content}
+                    </div>
                   </div>
                 </div>`
     return html;
