@@ -1,19 +1,20 @@
 $(function(){
   function buildHTML(message){
-    var html =  '<div class="message">'
-                  '<div class="message__top">'
-                    '<div class="message__user">'
+    var html = `
+                <div class="message">
+                  <div class="message__top">
+                    <div class="message__user">
                       message.user.name
-                    '</div>'
-                    '<div class="message__date">'
-                      ${message.created_at}
-                    '</div>'
-                  '</div>'
-                  '<div class="message__comment">'
-                    '<p>'message.content'</p>'
-                    '<p>' '<img src="' + message.image.url + '" class="lower-message__image" >' '</p>'
-                  '</div>'
-                '</div>'
+                    </div>
+                    <div class="message__date">
+                      message.created_at
+                    </div>
+                  </div>
+                  <div class="message__comment">
+                    <p>@message.content</p>
+                    <p> <img src="message.image.url" class="lower-message__image" > </p>
+                  </div>
+                </div>`
     return html;
   }
   $('.new_message').on('submit', function(e){
