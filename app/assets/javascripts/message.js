@@ -6,19 +6,19 @@ $(function(){
                       message.user.name
                     '</div>'
                     '<div class="message__date">'
-                      message.created_at.strftime('%Y年%m月%d日 %H:%M:%S')
+                      ${message.created_at}
                     '</div>'
                   '</div>'
                   '<div class="message__comment">'
                     '<p>'message.content'</p>'
-                    '<p>'<img src="' + message.image.url + '" class="lower-message__image" >'</p>'
+                    '<p>' '<img src="' + message.image.url + '" class="lower-message__image" >' '</p>'
                   '</div>'
                 '</div>'
     return html;
   }
   $('.new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
+    // console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
