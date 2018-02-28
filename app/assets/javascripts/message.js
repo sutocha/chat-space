@@ -32,9 +32,10 @@ $(function(){
     })
     .done(function(data){
       var insertHTML = buildHTML(data);
-      $('messages').append(insertHTML);
-      $form[0].reset();
-      $messages.animate({scrollTop: $messages[0].scrollHeight}, 2000);
+      $('.messages').append(insertHTML);
+      $('.form__submit').prop("disabled", false);
+      // $form[0].reset();
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 2000);
     })
     .fail(function(){
       alert('error');
