@@ -1,20 +1,57 @@
 $(function(){
   function buildHTML(message){
-    var html = `
-                <div class="message">
-                  <div class="message__top">
-                    <div class="message__user">
-                      ${message.user_name}
+    if (message.content && message.image){
+      var html = `
+                  <div class="message">
+                    <div class="message__top">
+                      <div class="message__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__date">
+                        ${message.created_at}
+                      </div>
+                      <div class="clear"></div>
+                      <div class="message__comment">
+                        ${message.content}
+                        ${message.image}
+                      </div>
                     </div>
-                    <div class="message__date">
-                      ${message.created_at}
+                  </div>`
+    }
+    else if (message.content){
+       var html = `
+                  <div class="message">
+                    <div class="message__top">
+                      <div class="message__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__date">
+                        ${message.created_at}
+                      </div>
+                      <div class="clear"></div>
+                      <div class="message__comment">
+                        ${message.content}
+                      </div>
                     </div>
-                    <div class="clear"></div>
-                    <div class="message__comment">
-                      ${message.content}
+                  </div>`
+    }
+    else if (message.image){
+       var html = `
+                  <div class="message">
+                    <div class="message__top">
+                      <div class="message__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__date">
+                        ${message.created_at}
+                      </div>
+                      <div class="clear"></div>
+                      <div class="message__comment">
+                        ${message.image}
+                      </div>
                     </div>
-                  </div>
-                </div>`
+                  </div>`
+    };
     return html;
   }
   $('.new_message').on('submit', function(e){
