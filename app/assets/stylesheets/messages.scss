@@ -10,3 +10,9 @@ header{
 
 .content-wrapper{
 }
+
+.messages{
+  width: calc(100% - 80px);
+  height: (700px - 201px);
+  overflow: scroll;
+}
