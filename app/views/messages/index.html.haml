@@ -3,7 +3,7 @@
   .side-content
     .top-side-content
       .user
-        .user__name ユーザーネーム
+        .user__name #{current_user.name}
         = link_to  do
           %i.fa.fa-cog{"aria-hidden" => "true"}
         = link_to  new_group_path do
@@ -12,8 +12,13 @@
 
     .middle-side-content
       .group
-        .group__name group1
-        .group__info no messages
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .group__name
+              = group.name
+            .group__info
+              = group.show_last_message
+
 
 
   .main-content
