@@ -1,57 +1,28 @@
 $(function(){
   function buildHTML(message){
-    if (message.content && message.image){
-      var html = `
-                  <div class="message">
-                    <div class="message__top">
-                      <div class="message__user">
-                        ${message.user_name}
-                      </div>
-                      <div class="message__date">
-                        ${message.created_at}
-                      </div>
-                      <div class="clear"></div>
-                      <div class="message__comment">
-                        ${message.content}
-                        <img src="message.image" >
-                      </div>
-                    </div>
-                  </div>`
-    }
-    else if (message.content){
-       var html = `
-                  <div class="message">
-                    <div class="message__top">
-                      <div class="message__user">
-                        ${message.user_name}
-                      </div>
-                      <div class="message__date">
-                        ${message.created_at}
-                      </div>
-                      <div class="clear"></div>
-                      <div class="message__comment">
-                        ${message.content}
-                      </div>
-                    </div>
-                  </div>`
-    }
-    else if (message.image){
-       var html = `
-                  <div class="message">
-                    <div class="message__top">
-                      <div class="message__user">
-                        ${message.user_name}
-                      </div>
-                      <div class="message__date">
-                        ${message.created_at}
-                      </div>
-                      <div class="clear"></div>
-                      <div class="message__comment">
-                        <img src="message.image" >
-                      </div>
-                    </div>
-                  </div>`
+    if (message.image == null){
+      var image = ""
+    }else{
+      var image = `<img src="${message.image}" >`
     };
+
+    var html = `
+                 <div class="message">
+                    <div class="message__top">
+                      <div class="message__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__date">
+                        ${message.created_at}
+                      </div>
+                      <div class="clear"></div>
+                      <div class="message__comment">
+                        ${message.content}
+                        ${image}
+                      </div>
+                    </div>
+                  </div>
+               `
     return html;
   }
   $('.new_message').on('submit', function(e){
@@ -77,5 +48,5 @@ $(function(){
     .fail(function(){
       alert('error');
     })
-  })
-})
+  });
+});
