@@ -1,10 +1,7 @@
 $(function(){
   function buildHTML(message){
-    if (message.image.url == null){
-      var image = ""
-    }else{
-      var image = `<img src="${message.image.url}" >`
-    };
+    var image;
+    (message.image.url == null) ? (image = "") : (image =`<img src="${message.image.url}" >`);
 
     var html = `
                  <div class="message">
