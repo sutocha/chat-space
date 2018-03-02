@@ -1,9 +1,9 @@
 $(function(){
   function buildHTML(message){
-    if (message.image == null){
+    if (message.image.url == null){
       var image = ""
     }else{
-      var image = `<img src="${message.image}" >`
+      var image = `<img src="${message.image.url}" >`
     };
 
     var html = `
