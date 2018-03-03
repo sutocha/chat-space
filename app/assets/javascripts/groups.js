@@ -1,5 +1,6 @@
 $(function(){
-  $("").on("keyup", function(){ //テキストフィールドのクラス名を""に
-    var input = $("").val();
+  $("#user-search-field").on("keyup", function(){ //テキストフィールドのクラス名を""に
+    var input = $("#user-search-field").val();
+    console.log(input)
   });
 });
