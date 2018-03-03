@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")#paramsとして送られてきたkeyword（入力された語句）で、Userモデルのnameカラムを検索、結果を@usersに代入
+    respond_to do |format|
+      format.html
+      format.json
+  end
 
   def edit
   end
