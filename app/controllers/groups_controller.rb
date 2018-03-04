@@ -6,6 +6,11 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     @group.users << current_user
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")#paramsとして送られてきたkeyword（入力された語句）で、Userモデルのnameカラムを検索、結果を@usersに代入
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create

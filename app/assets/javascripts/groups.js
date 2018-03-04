@@ -1,5 +1,6 @@
 $(function(){
-  function appenedUser(user){
+  function appendUser(user){
+    console.log(user)
     var html =`
       <div class="chat-group-user clearfix">
         <p class="chat-group-user__name">${user.name}</p>
@@ -12,7 +13,7 @@ $(function(){
     var input = $("#user-search-field").val();
     $.ajax({
       type: 'GET',
-      url: './groups/new',
+      url: '/groups/new',
       data: { keyword: input },
       dataType: 'json'
     })
