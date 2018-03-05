@@ -1,4 +1,5 @@
 $(function(){
+  var search_list = $(".search_list")
   function appendUser(user){
     console.log(user)
     var html =`
@@ -7,7 +8,7 @@ $(function(){
         <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</a>
       </div>
     `
-    return html;
+    search_list.append(html);
   }
   function appendNoUser(user){
     var html = `
