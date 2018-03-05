@@ -26,6 +26,7 @@ $(function(){
     })
     .done(function(users){
        if (users.length !== 0) {
+         search_list.find('div').remove();
          users.forEach(function(user){
            appendUser(user);
            search_list.append(appendUser(user))
