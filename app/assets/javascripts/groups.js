@@ -2,7 +2,6 @@ $(function(){
   var search_list = $("#user-search-result")
 
   function appendUser(user){
-    console.log(user)
     var html =`
       <div class="chat-group-user clearfix">
         <p class="chat-group-user__name">${user.name}</p>
