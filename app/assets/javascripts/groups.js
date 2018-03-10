@@ -14,8 +14,10 @@ $(function(){
   function appendNoUser(user){
     var html = `
       <div class="chat-group-user clearfix">
+        <p class="chat-group-user__name">${user}</p>
       </div>
     `
+    return html;
   }
 
   $("#user-search-field").on("keyup", function(){ //テキストフィールドのクラス名を""に
@@ -34,8 +36,9 @@ $(function(){
          });
        }
        else {
-         appendNoUser("一致するユーザがいません");
-       }
+        search_list.find('div').remove();
+        search_list.append(appendNoUser("一致するユーザがいません"));
+       };
     })
     .fail(function(){
       alert('user検索ができませんでした。');
