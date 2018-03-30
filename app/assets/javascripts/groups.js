@@ -46,18 +46,24 @@ $(function(){
     })
   });
 
-  function addUser(user){
+  function addUser(id, name){
     var html =`
-          <input type='hidden', name='group[user_ids][]', value="${user.id}">
-          <p class='chat-group-user__name'>${user.name}</p>
-          <a calss='user-search-remove chat-group-user__btn.chat-group-user__btn--remove js-remove-btn' data-user-id=${user.id} data-user-name='${user.name} 削除</a>
+      <div class='chat-group-user clearfix js-chat-member' id='${id}'>
+        <input name='group[user_ids][]' type='hidden' value='${id}'>
+        <p class='chat-group-user__name'>${name}</p>
+        <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+      </div>
     `
     return html;
   };
 
   $(document).on("click", ".chat-group-user__btn--add", function(){
     $('.chat-group-user').remove();
-    $('.js-chat-member').append(addUser(user));
+    var id = $(this).data('user-id');
+    var name = $(this).data('user-name');
+    // var user = $(this).data;
+    // console.log(user);
+    $('.js-add-user').append(addUser(id, name));
   });
 
   $(document).on("click", ".chat-group-user__btn--remove", function(){
