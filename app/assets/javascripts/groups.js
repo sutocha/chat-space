@@ -15,11 +15,22 @@ $(function(){
   function appendNoUser(user){
     var html = `
       <div class="chat-group-user clearfix">
-        <p class="chat-group-user__name">${user}</p>
+        <p class="chat-group-user__name">"一致するユーザーがいません"</p>
       </div>
     `
     return html;
   }
+
+    function addUser(id, name){
+    var html =`
+      <div class='chat-group-user clearfix js-chat-member' id='${id}'>
+        <input name='group[user_ids][]' type='hidden' value='${id}'>
+        <p class='chat-group-user__name'>${name}</p>
+        <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+      </div>
+    `
+    return html;
+  };
 
   $("#user-search-field").on("keyup", function(){ //テキストフィールドのクラス名を""に
     var input = $("#user-search-field").val();
@@ -38,7 +49,7 @@ $(function(){
        }
        else {
         search_list.find('div').remove();
-        search_list.append(appendNoUser("一致するユーザがいません"));
+        search_list.append(appendNoUser());
        };
     })
     .fail(function(){
@@ -46,16 +57,6 @@ $(function(){
     })
   });
 
-  function addUser(id, name){
-    var html =`
-      <div class='chat-group-user clearfix js-chat-member' id='${id}'>
-        <input name='group[user_ids][]' type='hidden' value='${id}'>
-        <p class='chat-group-user__name'>${name}</p>
-        <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
-      </div>
-    `
-    return html;
-  };
 
   $(document).on("click", ".chat-group-user__btn--add", function(){
     $('.chat-group-user').remove();
